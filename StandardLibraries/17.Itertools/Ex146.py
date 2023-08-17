@@ -1,5 +1,7 @@
 import itertools
 
+def average(a,b):
+    return (a+b)/2
 
 tesla = {
     'Close': {
@@ -40,7 +42,7 @@ tesla = {
     },
 }
 
-results = itertools.accumulate((tesla['Volume'].values()))
+results = itertools.accumulate(tesla['Close'].values(), average)
 
 for value in list(results):
     print(value)

@@ -40,7 +40,7 @@ tesla = {
     },
 }
 
-results = itertools.accumulate((tesla['Volume'].values()))
+results = itertools.accumulate(tesla['Close'].values(), min)
 
 for value in list(results):
     print(value)
