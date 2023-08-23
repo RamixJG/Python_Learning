@@ -16,4 +16,5 @@ sordata = sorted(data, key=lambda x: x["level"])
 grouped_data = itertools.groupby(sordata, key=lambda x: x["level"])
 
 for key, group in grouped_data:
-    print(f"{key} -> {list(group)}")
+    user_list = [entry["user"] for entry in group]  # Extract user values from each entry
+    print(f"{key} -> {user_list}")
